@@ -152,6 +152,68 @@
       gap: 0.55rem;
     }
 
+    [data-gallery-slider] .qual-results__gallery-slider {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    [data-gallery-slider] .qual-results__gallery-viewport {
+      min-width: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      scroll-behavior: smooth;
+    }
+
+    [data-gallery-slider] .qual-results__gallery-viewport::-webkit-scrollbar {
+      display: none;
+    }
+
+    [data-gallery-slider] .qual-results__gallery-grid {
+      grid-template-columns: none;
+      grid-auto-flow: column;
+      grid-auto-columns: calc((100% - (2 * 0.55rem)) / 3);
+    }
+
+    .qual-results__gallery-nav {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.75rem;
+      height: 2.75rem;
+      padding: 0;
+      border: 1px solid rgba(230, 233, 239, 0.95);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+      color: #445063;
+      font-size: 1.5rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      backdrop-filter: blur(8px);
+    }
+
+    .qual-results__gallery-nav:hover {
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.16);
+      transform: translateY(-1px);
+    }
+
+    .qual-results__gallery-nav:focus-visible {
+      outline: 2px solid rgba(50, 115, 220, 0.35);
+      outline-offset: 2px;
+    }
+
+    .qual-results__gallery-nav.is-disabled {
+      opacity: 0.5;
+      cursor: default;
+      transform: none;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+    }
+
     .qual-results__comparison-stack {
       display: grid;
       gap: 2rem;
@@ -339,12 +401,32 @@
       .qual-results__gallery-card {
         padding: 0.75rem;
       }
+
+      [data-gallery-slider] .qual-results__gallery-slider {
+        gap: 0.55rem;
+      }
+
+      [data-gallery-slider] .qual-results__gallery-grid {
+        grid-template-columns: none;
+        grid-auto-columns: 100%;
+      }
+
+      .qual-results__gallery-nav {
+        width: 2.4rem;
+        height: 2.4rem;
+        font-size: 1.3rem;
+      }
     }
 
     @media screen and (max-width: 1023px) and (min-width: 769px) {
       .qual-results__gallery-grid,
       .qual-results__comparison-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      [data-gallery-slider] .qual-results__gallery-grid {
+        grid-template-columns: none;
+        grid-auto-columns: calc((100% - 0.55rem) / 2);
       }
     }
   </style>
@@ -468,62 +550,76 @@
 
           <div class="qual-results__subsection qual-results__subsection--gallery">
             <h4 class="title is-5">🏠 RealEstate10K Results</h4>
-            <div class="qual-results__card qual-results__gallery-card">
-              <div class="qual-results__gallery-grid">
-                <div class="qual-results__video-shell">
-                  <video controls muted loop playsinline preload="metadata">
-                    <source src="static/results/02_results_gallery/RealEstate10K_01.mp4" type="video/mp4">
-                  </video>
-                </div>
+            <div class="qual-results__card qual-results__gallery-card" data-gallery-slider>
+              <div class="qual-results__gallery-slider">
+                <div class="qual-results__gallery-viewport" data-gallery-viewport>
+                  <div class="qual-results__gallery-grid">
+                    <div class="qual-results__video-shell">
+                      <video controls muted loop playsinline preload="metadata">
+                        <source src="static/results/02_results_gallery/RealEstate10K_01.mp4" type="video/mp4">
+                      </video>
+                    </div>
 
-                <div class="qual-results__video-shell">
-                  <video controls muted loop playsinline preload="metadata">
-                    <source src="static/results/02_results_gallery/RealEstate10K_02.mp4" type="video/mp4">
-                  </video>
-                </div>
+                    <div class="qual-results__video-shell">
+                      <video controls muted loop playsinline preload="metadata">
+                        <source src="static/results/02_results_gallery/RealEstate10K_02.mp4" type="video/mp4">
+                      </video>
+                    </div>
 
-                <div class="qual-results__video-shell">
-                  <video controls muted loop playsinline preload="metadata">
-                    <source src="static/results/02_results_gallery/RealEstate10K_03.mp4" type="video/mp4">
-                  </video>
-                </div>
+                    <div class="qual-results__video-shell">
+                      <video controls muted loop playsinline preload="metadata">
+                        <source src="static/results/02_results_gallery/RealEstate10K_03.mp4" type="video/mp4">
+                      </video>
+                    </div>
 
-                <div class="qual-results__video-shell">
-                  <video controls muted loop playsinline preload="metadata">
-                    <source src="static/results/02_results_gallery/RealEstate10K_04.mp4" type="video/mp4">
-                  </video>
+                    <div class="qual-results__video-shell">
+                      <video controls muted loop playsinline preload="metadata">
+                        <source src="static/results/02_results_gallery/RealEstate10K_04.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                  </div>
                 </div>
+                <button class="qual-results__gallery-nav" type="button" data-gallery-toggle aria-label="Show next result">
+                  <span data-gallery-arrow aria-hidden="true">›</span>
+                </button>
               </div>
             </div>
           </div>
 
           <div class="qual-results__subsection qual-results__subsection--gallery">
             <h4 class="title is-5">🌍 OOD Scene Results</h4>
-            <div class="qual-results__card qual-results__gallery-card">
-              <div class="qual-results__gallery-grid">
-                <div class="qual-results__video-shell">
-                  <video controls muted loop playsinline preload="metadata">
-                    <source src="static/results/02_results_gallery/ood-scene_01.mp4" type="video/mp4">
-                  </video>
-                </div>
+            <div class="qual-results__card qual-results__gallery-card" data-gallery-slider>
+              <div class="qual-results__gallery-slider">
+                <div class="qual-results__gallery-viewport" data-gallery-viewport>
+                  <div class="qual-results__gallery-grid">
+                    <div class="qual-results__video-shell">
+                      <video controls muted loop playsinline preload="metadata">
+                        <source src="static/results/02_results_gallery/ood-scene_01.mp4" type="video/mp4">
+                      </video>
+                    </div>
 
-                <div class="qual-results__video-shell">
-                  <video controls muted loop playsinline preload="metadata">
-                    <source src="static/results/02_results_gallery/ood-scene_02.mp4" type="video/mp4">
-                  </video>
-                </div>
+                    <div class="qual-results__video-shell">
+                      <video controls muted loop playsinline preload="metadata">
+                        <source src="static/results/02_results_gallery/ood-scene_02.mp4" type="video/mp4">
+                      </video>
+                    </div>
 
-                <div class="qual-results__video-shell">
-                  <video controls muted loop playsinline preload="metadata">
-                    <source src="static/results/02_results_gallery/ood-scene_03.mp4" type="video/mp4">
-                  </video>
-                </div>
+                    <div class="qual-results__video-shell">
+                      <video controls muted loop playsinline preload="metadata">
+                        <source src="static/results/02_results_gallery/ood-scene_03.mp4" type="video/mp4">
+                      </video>
+                    </div>
 
-                <div class="qual-results__video-shell">
-                  <video controls muted loop playsinline preload="metadata">
-                    <source src="static/results/02_results_gallery/ood-scene_04.mp4" type="video/mp4">
-                  </video>
+                    <div class="qual-results__video-shell">
+                      <video controls muted loop playsinline preload="metadata">
+                        <source src="static/results/02_results_gallery/ood-scene_04.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                  </div>
                 </div>
+                <button class="qual-results__gallery-nav" type="button" data-gallery-toggle aria-label="Show next result">
+                  <span data-gallery-arrow aria-hidden="true">›</span>
+                </button>
               </div>
             </div>
           </div>
@@ -769,6 +865,52 @@
         });
     }
 
+    function updateGallerySliderState(viewport, button) {
+      var arrow = button.querySelector("[data-gallery-arrow]");
+      var maxScrollLeft = Math.max(viewport.scrollWidth - viewport.clientWidth, 0);
+      var isAtEnd = maxScrollLeft > 0 && viewport.scrollLeft >= maxScrollLeft - 4;
+
+      button.classList.toggle("is-disabled", maxScrollLeft <= 4);
+      button.setAttribute("aria-label", isAtEnd ? "Show previous result" : "Show next result");
+
+      if (arrow) {
+        arrow.textContent = isAtEnd ? "‹" : "›";
+      }
+    }
+
+    function initGallerySliders() {
+      document.querySelectorAll("[data-gallery-slider]").forEach(function (card) {
+        var viewport = card.querySelector("[data-gallery-viewport]");
+        var button = card.querySelector("[data-gallery-toggle]");
+
+        if (!viewport || !button) {
+          return;
+        }
+
+        function syncState() {
+          updateGallerySliderState(viewport, button);
+        }
+
+        button.addEventListener("click", function () {
+          var maxScrollLeft = Math.max(viewport.scrollWidth - viewport.clientWidth, 0);
+          var isAtEnd = maxScrollLeft > 0 && viewport.scrollLeft >= maxScrollLeft - 4;
+
+          if (maxScrollLeft <= 4) {
+            return;
+          }
+
+          viewport.scrollTo({
+            left: isAtEnd ? 0 : maxScrollLeft,
+            behavior: "smooth"
+          });
+        });
+
+        viewport.addEventListener("scroll", syncState, { passive: true });
+        window.addEventListener("resize", syncState);
+        syncState();
+      });
+    }
+
     document.addEventListener("DOMContentLoaded", function () {
       document.querySelectorAll("video").forEach(function (video) {
         video.autoplay = true;
@@ -780,6 +922,10 @@
 
       if (document.querySelector("[data-prompt-filename]")) {
         loadOodPrompts();
+      }
+
+      if (document.querySelector("[data-gallery-slider]")) {
+        initGallerySliders();
       }
 
       if (window.bulmaCarousel && document.querySelector("#results-carousel")) {
