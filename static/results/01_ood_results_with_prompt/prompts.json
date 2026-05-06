@@ -1,0 +1,44 @@
+[
+  {
+    "filename": "01.mp4",
+    "slide": 7,
+    "side": "left",
+    "prompt": "Prompt:  A playful indoor game room with bold primary-colored walls in red, blue, and yellow. A retro arcade cabinet stands against the back wall, illuminated by decorative string lights across the ceiling. Soft beanbag chairs rest on the floor near a patterned rug with pixel-style designs. Shelving units hold block-shaped toys and plush figures.",
+    "source": "slide-07/left_A_playful_indoor_game_room_with_bold_primary_colored_walls_in_red_blue_and_yellow_A_retro_arcade_cabinet_stand.mp4"
+  },
+  {
+    "filename": "02.mp4",
+    "slide": 7,
+    "side": "right",
+    "prompt": "Prompt:  Nordic fjord-side village scene with still water and a complete reflection; colorful wooden cabins and houses (red, yellow, white) scattered along a stone-lined shore and lush green hillside; snow-capped mountains in the distance under a blue sky; crisp natural daylight rich colors, detailed textures.",
+    "source": "slide-07/right_Nordic_fjord_side_village_scene_with_still_water_and_a_complete_reflection_colorful_wooden_cabins_and_houses_r.mp4"
+  },
+  {
+    "filename": "03.mp4",
+    "slide": 8,
+    "side": "left",
+    "prompt": "Prompt: A minimalist concrete house with large glass windows, clean geometric lines, an open paved front area, bright daylight, and a side garden revealing more modern architecture and quiet residential surroundings.",
+    "source": "slide-08/left_A_minimalist_concrete_house_with_large_glass_windows_clean_geometric_lines_an_open_paved_front_area_bright_day.mp4"
+  },
+  {
+    "filename": "04.mp4",
+    "slide": 8,
+    "side": "right",
+    "prompt": "Prompt:  A traditional interior blending classic and modern elements. A dining room with burgundy and white walls, wooden furniture, a red sofa, a buffet cabinet, a modern chandelier, and a vase of red flowers, bathed in natural light.",
+    "source": "slide-08/right_A_traditional_interior_blending_classic_and_modern_elements_A_dining_room_with_burgundy_and_white_walls_wooden.mp4"
+  },
+  {
+    "filename": "05.mp4",
+    "slide": 9,
+    "side": "left",
+    "prompt": "Prompt: A modern minimalist interior with a dark gray sectional sofa, metallic coffee table, and abstract painting. Floor-to-ceiling windows reveal a cityscape. The camera pans to a white kitchen with an island, a dining set, a fireplace, and a glass-balustrade staircase, all under warm recessed lighting.",
+    "source": "slide-09/left_A_modern_minimalist_interior_with_a_dark_gray_sectional_sofa_metallic_coffee_table_and_abstract_painting_Floor.mp4"
+  },
+  {
+    "filename": "06.mp4",
+    "slide": 9,
+    "side": "right",
+    "prompt": "Prompt:  Aegean seaside village alley with whitewashed buildings; blue doors and shutters, stone-paved lane leading toward a deep blue sea; vivid magenta bougainvillea accents on walls and terraces; clear cloudless deep-blue sky, strong natural sunlight with crisp shadows; clean and airy scene, vibrant colors..",
+    "source": "slide-09/right_Aegean_seaside_village_alley_with_whitewashed_buildings_blue_doors_and_shutters_stone_paved_lane_leading_towar.mp4"
+  }
+]
